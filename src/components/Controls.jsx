@@ -1,62 +1,41 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
+import { counterAction } from "../store/counter";
 
 const Controls = () => {
   const inputElement = useRef();
- 
+
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
-    dispatch({ 
-      type: "INCREMENT" 
-    });
+    dispatch(counterAction.increment());
   };
 
   const handleDecrement = () => {
-    dispatch({ 
-      type: "DECREMENT" 
-    });
+    dispatch(counterAction.decrement());
   };
 
   const handleReset = () => {
-    dispatch({ 
-      type: "RESET" 
-    });
+    dispatch(counterAction.reset());
   };
 
   const handleAddButton = () => {
-    dispatch({
-      type: "ADD",
-      payload: { num: inputElement.current.value },
-    });
+    dispatch(counterAction.add(inputElement.current.value ));
     inputElement.current.value = "";
   };
   const handleSubtractButton = () => {
-    dispatch({
-      type: "SUBTRACT",
-      payload: { num: inputElement.current.value },
-    });
+    dispatch(counterAction.subtract(inputElement.current.value ));
     inputElement.current.value = "";
   };
-
   const handleMultiPlicationButton = () => {
-    dispatch({
-      type: "MULTIPLICATION",
-      payload: {
-        num: inputElement.current.value,
-      },
-    });
+    dispatch(counterAction.multiplication(inputElement.current.value ))
     inputElement.current.value = "";
   };
   const handleDivideButton = () => {
-    dispatch({
-      type: "DIVIDE",
-      payload: {
-        num: inputElement.current.value,
-      },
-    });
+    dispatch(counterAction.divide(inputElement.current.value ))
     inputElement.current.value = "";
   };
+ 
 
   return (
     <>
@@ -86,8 +65,8 @@ const Controls = () => {
         </button>
       </div>
 
-      <div class="input-group mb-3">
-      {/* Input Field */}
+      <div className="input-group mb-3">
+        {/* Input Field */}
         <input
           type="text"
           ref={inputElement}
@@ -98,10 +77,37 @@ const Controls = () => {
         />
 
         {/* Button Field */}
-        <button type="button" className="btn btn-info me-3 p-3" onClick={handleAddButton}>Add</button>
-        <button type="button" className="btn btn-warning me-3 p-3" onClick={handleSubtractButton}> Subtract </button>
-        <button type="button" className="btn btn-dark me-3 p-3" onClick={handleMultiPlicationButton}>  Multilication </button>
-        <button type="button" className="btn btn-secondary me-3 p-3" onClick={handleDivideButton}>  Divide </button>
+        <button
+          type="button"
+          className="btn btn-info me-3 p-3"
+          onClick={handleAddButton}
+        >
+          Add
+        </button>
+        <button
+          type="button"
+          className="btn btn-warning me-3 p-3"
+          onClick={handleSubtractButton}
+        >
+          {" "}
+          Subtract{" "}
+        </button>
+        <button
+          type="button"
+          className="btn btn-dark me-3 p-3"
+          onClick={handleMultiPlicationButton}
+        >
+          {" "}
+          Multilication{" "}
+        </button>
+        <button
+          type="button"
+          className="btn btn-secondary me-3 p-3"
+          onClick={handleDivideButton}
+        >
+          {" "}
+          Divide{" "}
+        </button>
       </div>
     </>
   );

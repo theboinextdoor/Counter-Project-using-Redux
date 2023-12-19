@@ -1,13 +1,4 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-
+The ReactRedux Math Operations Counter represents a harmonious blend of cutting-edge technologies, making arithmetic operations not only functional but also visually appealing. With Redux managing the state efficiently and Bootstrap providing a modern design, users can enjoy a responsive and intuitive interface while exploring the versatile world of mathematical operations. Immerse yourself in the interactive realm of numbers with our innovative ReactRedux Math Operations Counter!
 
 ***install npm package***
 ****
